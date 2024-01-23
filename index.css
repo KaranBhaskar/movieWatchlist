@@ -1,0 +1,164 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+}
+.container {
+  max-width: 34.375rem;
+  margin: 0 auto;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("src/cover.jpeg");
+  height: 13rem;
+  color: #ffffff;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 2.6875rem;
+  font-weight: bolder;
+}
+
+.header a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+input.hs-search-field__input {
+  font-size: 14px;
+  background-image: url("./src/Search.png");
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-size: 1.25rem;
+  padding-left: 40px;
+  background-color: #2e2e2f;
+  border: none;
+  color: #a5a5a5;
+  font-weight: 400;
+}
+.search-bar {
+  display: flex;
+  height: 50px;
+  border-radius: 1.5625rem;
+  position: absolute;
+  top: -3.8125rem;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.submit-btn {
+  background-color: #4b4b4b;
+  color: #ffffff;
+  border: none;
+  flex-grow: 1;
+  font-size: 14px;
+}
+.search-input {
+  flex-grow: 2;
+  font-family: "Inter", sans-serif;
+}
+main {
+  position: relative;
+}
+
+/* movie */
+.showcase--search {
+  margin-top: 3.8125rem;
+  color: #ffffff;
+}
+
+.movie--cover {
+  width: 6.1875rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 1.3125rem;
+}
+
+.movie-title h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.movie-title p {
+  font-size: 0.75rem;
+}
+
+.movie-info h3 {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.movie-info button {
+  font-weight: 300;
+  background-color: #121212;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+.movie-info {
+  gap: 1.125rem;
+}
+.movie--plot {
+  font-size: 0.875rem;
+  color: #a5a5a5;
+  line-height: 1.5;
+}
+
+.movie div {
+  margin-bottom: 0.5rem;
+}
+
+.movie {
+  padding: 1.3125rem 0;
+  border-bottom: 0.0625rem #2c2c2c solid;
+}
+
+.display {
+  display: None;
+}
+
+/* watchlist */
+.showcase--watchlist {
+  color: #ffffff;
+}
+.showcase--watchlist > p {
+  text-align: center;
+  color: #787878;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 2;
+}
+
+.showcase--watchlist p span {
+  display: block;
+}
+
+.showcase--watchlist p a {
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.875rem;
+}
