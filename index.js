@@ -8,7 +8,7 @@ if (showcaseSearch) {
   const searchInput = document.getElementById("search-input");
   searchForm.addEventListener("submit", function (e) {
     if (searchInput.value) {
-      const url = `http://www.omdbapi.com/?s=${searchInput.value.replace(
+      const url = `https://www.omdbapi.com/?s=${searchInput.value.replace(
         /\s/g,
         "+"
       )}&apikey=8f047ac2`;
@@ -54,7 +54,7 @@ if (showcaseWatchlist) {
   }
 }
 function render(info, element) {
-  const url = `http://www.omdbapi.com/?i=${info.imdbID}&apikey=8f047ac2`;
+  const url = `https://www.omdbapi.com/?i=${info.imdbID}&apikey=8f047ac2`;
   let innner = "";
   let btn = element === showcaseSearch ? "Watchlist" : "Remove";
   let icon = element === showcaseSearch ? "addToWatchlist.png" : "remove.png";
