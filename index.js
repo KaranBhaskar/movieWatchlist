@@ -1,5 +1,6 @@
 const showcaseSearch = document.getElementById("showcase--search");
 const showcaseWatchlist = document.getElementById("showcase--watchlist");
+const showcaseMovie = document.getElementById("showcase--movie");
 let watchlist = [];
 
 if (showcaseSearch) {
@@ -63,16 +64,23 @@ function render(info, element) {
       innner += `
           <div class="movie flex" id=movie--${info.imdbID}>
              <img
-               src=${data.Poster}
+               src=${
+                 data.Poster != "N/A" ? data.Poster : "./src/imageNotFound.jpeg"
+               }
                class="movie--cover"
              />
              <div class="movie--info">
                <div class="movie-title flex">
                  <h2>${data.Title}</h2>
-                 <p><img src="./src/reviewStar.png" /> ${data.Ratings[0].Value.slice(
-                   0,
-                   3
-                 )}</p>
+                 <p><img src="./src/reviewStar.png" /> ${
+                   data.Ratings.length
+                     ? data.Ratings[0].Value.slice(0, 3)
+                     : "N/a"
+                 }</p>
+                 <button class="watch" >
+                 <a id=watch-${
+                   info.imdbID
+                 } href="./playMovie.html"> Watch Now</a></button>
                </div>
                <div class="movie-info flex">
                  <h3>${data.Runtime}</h3>
@@ -101,7 +109,9 @@ document.addEventListener("click", function (e) {
     };
     watchlist.push(obj);
     localStorage.setItem("watchlist", JSON.stringify(watchlist));
-  } else {
+  } else if (target.substring(0, 6) === "watch-") {
+    localStorage.setItem("movie", JSON.stringify(target.substring(6)));
+  } else if (showcaseWatchlist) {
     watchlist = JSON.parse(localStorage.getItem("watchlist"));
     const index = watchlist.findIndex(function (movie) {
       return movie.imdbID === e.target.id;
@@ -121,3 +131,11 @@ document.addEventListener("click", function (e) {
     localStorage.setItem("watchlist", JSON.stringify(watchlist));
   }
 });
+
+if (showcaseMovie) {
+  const id = JSON.parse(localStorage.getItem("movie"));
+  console.log(id);
+  document.getElementById(
+    "video"
+  ).innerHTML = `<iframe src="https://vidsrc.to/embed/movie/${id}" frameborder="0" allowFullScreen="true"></iframe>`;
+}

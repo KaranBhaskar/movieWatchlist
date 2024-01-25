@@ -162,3 +162,26 @@ main {
   text-align: center;
   font-size: 0.875rem;
 }
+
+.watch {
+  cursor: pointer;
+  padding: 0.3125rem;
+  font-family: "Inter", sans-serif;
+}
+
+.watch a {
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+.video {
+  margin-top: 3.75rem;
+  background-color: #ffffff;
+  height: 20rem;
+  width: ;
+}
+
+iframe {
+  height: 100%;
+  width: 100%;
+}
